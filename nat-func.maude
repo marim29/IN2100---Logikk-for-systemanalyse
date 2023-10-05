@@ -1,0 +1,5 @@
+fmod NAT-FUNC is
+protecting NAT-MULT .
+op f : s1 s2 s3 s4 -> s .
+ops g h : s1 s2 -> s .
+endfm

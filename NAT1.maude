@@ -1,0 +1,21 @@
+
+fmod NAT1 is protecting NAT< .
+  sort Nat .
+  op 0 : -> Nat [ctor] .
+  op s : Nat -> Nat [ctor] .
+
+  vars M N : Nat .
+
+  op half : Nat -> Nat .
+  ops _monus_ diff min : Nat Nat -> Nat .
+  ops odd even : Nat -> Boolean .
+  ops _<=_ _>_ _>=_ _==_ : Nat Nat -> Boolean .
+
+  eq half(0) = 0 .
+  eq half(s(0)) = s .
+  eq half(s(s(M))) = s(half(M)) .
+
+  eq diff(0,M) = M .
+  eq diff(M,0) = M .
+  eq diff(s(M), s(N)) = diff(M,N) .
+endfm

@@ -1,0 +1,41 @@
+load  full-maude
+
+load messages.maude   --- message wrappers
+
+--- Oppgave 3 fra eksamen 2015: Ring-based Leader Election
+
+--- 3a
+(omod RING is protecting Nat + String .
+
+  subsort String < Oid .
+  class Node | value : NzNat, next : Oid .    --- value = identity.
+  vars X X' Y : Oid .   var N : NzNat .   vars M M': MsgContent .
+
+  crl [send] :
+      < X : Node | value : N, message: M, next : X' >
+    =>
+      < X : Node | value : N, message: M, next : X' >
+      < X' : Node | value : N + 1, message: M, next : X'' >
+      if X'' > X && M > (N + 1) .
+--- ?
+
+--- 3b
+--- Initialtilstander:
+  ops n1 n2 n3 n4 n5 : -> Oid [ctor] .
+
+  op init : -> Configuration .
+
+  eq init = < n1 : Node | value : 1, next : n2 >
+            < n2 : Node | value : 2, next : n3 >
+            < n3 : Node | value : 3, next : n4 >
+            < n4 : Node | value : 4, next : n5 >
+            < n5 : Node | value : 5, next : n1 > .
+endom)
+
+
+--- 3c
+--- Det største antallet handlinger som kan finne sted samtidig i systemet er
+--- kanskje to sammenfallende handlinger?
+
+
+--- 3d

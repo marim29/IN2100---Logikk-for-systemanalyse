@@ -1,0 +1,20 @@
+fmod NAT-ADD is
+  sort Nat .
+  op 0 : -> Nat [ctor] .
+  op s : Nat -> Nat [ctor] .
+  op _+_ : Nat Nat -> Nat .
+
+  vars M N : Nat .  --- Dette er en kommentar
+
+  eq 0 + M = M .
+  eq s(M) + N = s(M + N) .
+endfm
+
+-Manual til Maude:
+https://www.mn.uio.no/ifi/tjenester/it/hjelp/startpakke/Programmer/Felles/Maude/maude-manual.pdf
+
+-Forelesningsark:
+http://folk.uio.no/peterol/IN2100V20/Forelesninger/f20-2.pdf
+
+-Obligen:
+https://folk.uio.no/peterol/IN2100V20/Oppgaver/oblig1.html

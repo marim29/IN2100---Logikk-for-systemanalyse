@@ -1,0 +1,14 @@
+fmod NAT< is
+  protecting nat-add .
+  sort Nat .
+  op 0 : -> Nat [ctor] .
+  op s : Nat -> Nat [ctor] .
+
+  vars M N : Nat .
+  
+  op _<_ : Nat Nat -> Boolean .
+  vars M N : Nat .
+  eq 0 < s(M) = true .
+  eq M < 0 = false .
+  eq S(M) < s(N) = M < N .
+endfm
